@@ -1,6 +1,7 @@
 package fpDual2023EcomerceJSF.vista;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -11,7 +12,7 @@ public class FormularioTarifaVista {
 
 	private Long idMarca;
 	private Long idProducto;
-	private LocalDate fechaInicio;
+	private Date fechaInicio;
 	private LocalDate fechaFin;
 	private Long precioEnCentimos;
 	private String codigoMoneda;
@@ -36,11 +37,11 @@ public class FormularioTarifaVista {
 		this.idProducto = idProducto;
 	}
 
-	public LocalDate getFechaInicio() {
+	public Date getFechaInicio() {
 		return fechaInicio;
 	}
 
-	public void setFechaInicio(LocalDate fechaInicio) {
+	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 

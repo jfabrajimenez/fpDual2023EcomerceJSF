@@ -4,10 +4,11 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-    <head>
+    <h:head>
     	<title>Ejercicio E-comerce: Tarifa</title>
-    </head>
-    <body>
+    </h:head>
+    <h:body>
+    	
     	<h1>Ejercicio E-comerce: Formulario de tarifas</h1>
     	<hr />
     	
@@ -15,13 +16,26 @@
     		<p:messages />
     		
     		<h:panelGrid columns="2">
-    		<h:outputLabel id="lblIdMarca" for="idMarca" value="Id de Marca" />
+    			<h:outputLabel id="lblIdMarca" for="idMarca" value="Id de Marca" />
     			<p:inputNumber id="idMarca" value="#{formularioTarifaVista.idMarca}" decimalPlaces="0" />  
     			
+    			<h:outputLabel id="lblIdProducto" for="idProducto" value="Id de Producto" />
+    			<p:inputNumber id="idProducto" value="#{formularioTarifaVista.idProducto}" decimalPlaces="0" />  
     			
+    			<p:outputLabel for="fechaInicio" value="Fecha de inicio" />
+        		<p:datePicker id="fechaInicio" value="#{formularioTarifaVista.fechaInicio}" showIcon="true" />
+        		
+        		<p:outputLabel for="fechaFin" value="Fecha de Fin" />
+        		<p:datePicker id="fechaFin" value="#{formularioTarifaVista.fechaFin}" showIcon="true" />
+        		
+        		<h:outputLabel id="lblPrecio" for="precio" value="Precio" />
+    			<p:inputNumber id="precio" value="#{formularioTarifaVista.precioEnCentimos}" decimalPlaces="0" minValue="1" />
+    			
+    			<h:outputLabel id="lblMoneda" for="moneda" value="Moneda" />
+    			<p:inputText id="moneda" value="#{formularioTarifaVista.codigoMoneda}" />
     		</h:panelGrid>
     		
     		<h:commandButton value="Enviar" action="result" />
     	</h:form>
-    </body>
+    </h:body>
 </html>
