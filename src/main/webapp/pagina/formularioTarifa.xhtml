@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:validador="http://aytos.validadoresJSF.es/ui">
     <h:head>
     	<title>Ejercicio E-comerce: Tarifa</title>
     </h:head>
@@ -32,7 +33,9 @@
     			<p:inputNumber id="precio" value="#{formularioTarifaVista.precioEnCentimos}" decimalPlaces="0" minValue="1" />
     			
     			<h:outputLabel id="lblMoneda" for="moneda" value="Moneda" />
-    			<p:inputText id="moneda" value="#{formularioTarifaVista.codigoMoneda}" />
+    			<p:inputText id="moneda" value="#{formularioTarifaVista.codigoMoneda}">
+    				<validador:validadorMoneda id="validadorMoneda" />
+    			</p:inputText>
     		</h:panelGrid>
     		
     		<h:commandButton value="Enviar" action="result" />
