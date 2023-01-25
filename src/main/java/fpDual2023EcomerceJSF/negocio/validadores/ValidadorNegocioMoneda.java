@@ -30,7 +30,7 @@ public class ValidadorNegocioMoneda {
 	
 	
 	private Optional<RestriccionViolada> validarObligatoriedad(){
-		if(this.moneda!=null || this.moneda.isEmpty()) {
+		if(this.moneda==null || this.moneda.isEmpty()) {
 			return Optional.of(new RestriccionViolada(CodigoErrorEnum.MONEDA_OBLIGATORIA));
 		}
 		
@@ -40,6 +40,10 @@ public class ValidadorNegocioMoneda {
 	private Optional<RestriccionViolada> validarIntegridadDatos(){
 		if(this.moneda==null) {
 			return Optional.empty();
+		}
+		
+		if(this.moneda.trim().isEmpty()) {
+			return Optional.of(new RestriccionViolada(CodigoErrorEnum.MONEDA_EN_BLANCO)); 
 		}
 		
 		Optional<MonedasPermitidasEnum>monedaPermitida=MonedasPermitidasEnum.getPorCodigo(this.moneda);
